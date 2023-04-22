@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "7198b2c4-19c4-4483-8544-3cca71f8f571",
+		"name": "Assignment-1",
+		"description": "This API Contains CRUD Functionality.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26157365",
+		"_collection_link": "https://lunar-firefly-516331.postman.co/workspace/My-Workspace~7df8d2c7-c72e-474c-8689-6e93f24825b0/collection/26157365-7198b2c4-19c4-4483-8544-3cca71f8f571?action=share&creator=26157365&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Tales of beast 1\",\r\n    \"author\":\"John Doe\",\r\n    \"isbn\":1234567890,\r\n    \"unitPrice\":1060,\r\n    \"unitInStock\":24,\r\n    \"discount\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"create"
+							]
+						},
+						"description": "Simple Insertion is performed here. all the basic information of product and category can be inserted and category ID in product model is refrenced with catgeory id in category model."
+					},
+					"response": []
+				}
+			],
+			"description": "Contains All the test cases regarding the insertion."
+		},
+		{
+			"name": "Get Product Details",
+			"item": [
+				{
+					"name": "Read One Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/read/64443961b4ed56265ccf5c68",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"read",
+								"64443961b4ed56265ccf5c68"
+							]
+						},
+						"description": "Product Details can be viewed by using path params i.e product ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/readAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"readAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/filter?priceLessthan=2000&priceGreaterThan=1000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "priceLessthan",
+									"value": "2000"
+								},
+								{
+									"key": "priceGreaterThan",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update Product",
+			"item": [
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Tales of beast 1.2\",\r\n    \"author\":\"John Doe John\",\r\n    \"isbn\":1234567890,\r\n    \"unitPrice\":1760,\r\n    \"unitInStock\":204,\r\n    \"discount\":50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/update/64443961b4ed56265ccf5c68",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"update",
+								"64443961b4ed56265ccf5c68"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Product",
+			"item": [
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/delete/64443961b4ed56265ccf5c68",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"delete",
+								"64443961b4ed56265ccf5c68"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
