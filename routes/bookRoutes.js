@@ -1,13 +1,16 @@
 const express = require("express");
-const { createProductAndCategory, getProductDetails, getAllProduct, updateProduct, deleteProduct } = require("../controllers/bookController");
+const { createProduct, getProductDetails, getAllProduct, updateProduct, deleteProduct, filterProductPrice } = require("../controllers/bookController");
 
 const router = express.Router();
 
-// create product and category
-router.route('/create').post(createProductAndCategory);
+// create product(Books)
+router.route('/create').post(createProduct);
 
 // get single product
 router.route('/read/:id').get(getProductDetails);
+
+// filter product
+router.route('/filter').get(filterProductPrice);
 
 // get All product
 router.route('/readAll').get(getAllProduct);

@@ -2,7 +2,7 @@ const Product = require("../models/bookModel");
 // const Category = require("../models/categoryModel");
 
 // create product
-exports.createProductAndCategory = async(req,res,next)=>{
+exports.createProduct = async(req,res,next)=>{
 
     const product = await Product.create(req.body);
 
@@ -26,9 +26,24 @@ exports.getProductDetails = async(req,res,next)=>{
     });
 }
 
+// Product Price filter
+exports.filterProductPrice = async(req,res,next)=>{
+
+    const product = await Product.find({unitPrice:{$lte: req.query.priceLessthan, $gte:req.query.priceGreaterThan}});
+
+    if(!product){
+        return next("Product not found!")
+    }
+
+    res.status(200).json({
+        success:true,
+        product
+    })
+}
+
 // Get All Product
 exports.getAllProduct = async(req,res,next)=>{
-    const product = await Product.find();
+    const product = await Product.find().sort({unitPrice: 'desc'});
 
     if (!product) {
         return next("Product Not Found!");
