@@ -45,6 +45,8 @@ exports.filterProductPrice = async(req,res,next)=>{
 exports.getAllProduct = async(req,res,next)=>{
     const product = await Product.find().sort({unitPrice: req.query.sortby});
 
+    console.log(`unitPrice: ${req.query.sortby}`);
+
     if (!product) {
         return next("Product Not Found!");
     }

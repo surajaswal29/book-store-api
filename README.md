@@ -24,19 +24,22 @@ https://book-store-api-h59n.onrender.com
 <span>Example =></span>
 <pre>
 {
-    "title":"Tales of beast 1",
-    "author":"John Doe",
+    "title":"Kasht or Jeevan",
+    "author":"Suraj Aswal",
     "isbn":1234567890,
-    "unitPrice":1060,
+    "unitPrice":550,
     "unitInStock":24,
-    "discount":20
+    "discount":20,
+    "numOfPages":400,
+    "condition":"New"
 }
 </pre>
+
 <h3>Read One Product</h3>
 <p>GET Request => https://book-store-api-h59n.onrender.com/api/v1/read/PRODUCT_ID</p>
 <span>Example =></span>
 <pre>
-https://book-store-api-h59n.onrender.com/api/v1/read/6402dc96fe130fc6c4fb3fb6
+https://book-store-api-h59n.onrender.com/api/v1/read/6444f5aa72722d308c8e3ac5
 </pre>
 
 <h3>Read All Product</h3>
@@ -46,11 +49,25 @@ https://book-store-api-h59n.onrender.com/api/v1/read/6402dc96fe130fc6c4fb3fb6
 https://book-store-api-h59n.onrender.com/api/v1/readAll
 </pre>
 
+<h3>Read Product with Filter</h3>
+<p>GET Request => https://book-store-api-h59n.onrender.com/api/v1/filter/?priceLessthan=PRICE&priceGreaterThan=PRICE</p>
+<span>Example =></span>
+<pre>
+https://book-store-api-h59n.onrender.com/api/v1/filter?priceLessthan=5000&priceGreaterThan=5000
+</pre>
+
+<h3>Read Product With Sorting (Asc/Dsc)</h3>
+<p>GET Request => https://book-store-api-h59n.onrender.com/api/v1/readall?sortby=SORT_TYPE</p>
+<span>Example =></span>
+<pre>
+https://book-store-api-h59n.onrender.com/api/v1/readall?sortby=desc
+</pre>
+
 <h3>Update Product</h3>
 <p>PUT Request => https://book-store-api-h59n.onrender.com/api/v1/update/PRODUCT_ID</p>
 <span>Example =></span>
 <pre>
- https://book-store-api-h59n.onrender.com/api/v1/update/6402dc96fe130fc6c4fb3fb6
+ https://book-store-api-h59n.onrender.com/api/v1/update/643ef5e8de1bbc99e32a3be0
 </pre>
 
 <h3>Delete Product</h3>
