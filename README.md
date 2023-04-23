@@ -1,9 +1,6 @@
 # book-store-api
 Book Store CRUD API
 
-<h4>Objective: Build a RESTful API that can /create/read/update/delete Product and Category data from a
-persistence database.</h4>
-
 <h4>Required Applications/package/framework</h4>
 <ul>
     <li>Node JS - JavaScript cross-platform runtime environment </li>
